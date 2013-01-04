@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html> 
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>State Commander</title>
+		<link href="MC.css" rel="stylesheet" type="text/css">
+		
+		<!-- ================================================================-->
+		<!-- ============================ IMPORT CONFIG FILES ===============-->
+		<!-- ================================================================-->
+		<!-- the General Configuration file -->
+		<script type="text/javascript" src="../../../../lib/js/config.js"></script>
+		<!-- the Component-Specific Configuration file -->
+		<script type="text/javascript" src="./MC_config.js"></script> 
+
+		<!-- ================================================================-->
+		<!-- ========================= IMPORT SOA2M LIB FILES  ==============-->
+		<!-- ================================================================-->
+		
+		<!-- the Lib containing the Soa2M Architecture API-->
+		<script type="text/javascript" src="../../../../lib/js/Soa2m.js"></script>	
+		
+		<!-- ================================================================-->
+		<!-- ========================= IMPLEMENTATION  ======================-->
+		<!-- ================================================================-->		
+			
+		<!-- the implementation of the current MC  -->
+		<script type="text/javascript" src="./MC.js"></script>
+
+	</head>
+
+	<body onload="init()" onunload="kill()">
+		<form name="form">
+			<input type="button" id="start" name="start" value="start" 
+				   	style="width:100px" onclick="startIsClicked()" />
+			<br><br>
+			<input type="button" id="pause" name="pause" value="pause" 
+					style="width:100px" onclick="pauseIsClicked()" />
+			<br><br>
+			<input type="button" id="resume" name="resume" value="resume" 
+					style="width:100px" onclick="resumeIsClicked()" />
+			<br><br>
+			<input type="button" id="cancel" name="cancel" value="cancel" 
+					style="width:100px" onclick="cancelIsClicked()" />
+			<br>
+		</form>
+		<br>
+		<h4 id="log"> </h4>
+	</body>
+</html>
+

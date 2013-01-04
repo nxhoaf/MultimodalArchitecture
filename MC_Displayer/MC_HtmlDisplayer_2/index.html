@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>HTML Displayer</title>
+		<link href="clock.css" rel="stylesheet" type="text/css">
+		<!-- ====================================================================-->
+		<!-- ============================ IMPORT CONFIG FILES ===================--> 
+		<!-- the General and Specific Configuration files -->
+        <script type="text/javascript" src="../../lib/js/config.js"></script>
+		<script type="text/javascript" src="./MC_config.js"></script>
+		
+		<!-- =========================================================================-->
+		<!-- ========================= IMPORT LIBRAIRIES FILES  =======================-->
+		
+		<!-- the XHR Lib to handle the client/server async communication -->
+		<script type="text/javascript" src="../../lib/js/XHR_Lib/MMDispatcher.js"></script>
+		
+		<!-- the Lib to handle the HTTP polling communication with comet --> 
+		<script type="text/javascript" src="../../lib/js/Prototype_Lib.js"></script>
+		<script type="text/javascript" src="../../lib/js/Comet_Lib.js"></script>
+		
+		<!-- Imports the Lib  to handle the Orchestration (turn-taking) Events from the IM  -->
+		<script type="text/javascript" src="../../lib/js/Controller_Lib.js"></script>
+		
+		<!-- the MMI Lib to send MMI Command Events -->
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/Exception.js"></script>
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/Factory.js"></script>
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/MessageBase.js"></script>
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/MessageRequest.js"></script>
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/MessageResponse.js"></script>
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/MessageType.js"></script>
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/Metadata.js"></script>
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/Notification.js"></script>
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/Spec.js"></script>
+		<script type="text/javascript" src="../../lib/js/MMI_Lib/Status.js"></script>
+		
+		<!-- the MMI Lib to handle received MMI Commands -->
+		<script type="text/javascript" src="../../lib/js/Observer_Lib/InteractionManager.js"> </script> 
+		<script type="text/javascript" src="../../lib/js/Observer_Lib/InteractionState.js"> </script> 
+		<script type="text/javascript" src="../../lib/js/Observer_Lib/Timer.js"> </script>
+		<script type="text/javascript" src="../../lib/js/Observer_Lib/Parser.js"> </script>
+		<script type="text/javascript" src="../../lib/js/Observer_Lib/Validator.js"> </script>
+		
+		<!-- the MMI Lib to create interface 'class' in js -->		
+		<script type="text/javascript" src="../../lib/js/Interface_Lib.js"></script>
+		
+		<!-- the MMI Lib to handle button-generated commands -->	
+		<script type="text/javascript" src="../../lib/js/Commander_Lib.js"></script>
+		
+		<!-- ==============================================================================-->
+		<!-- ========================= IMPORT IMPLEMENTATION FILES  =======================-->
+ 
+		<!-- the implementation code to send Events of the IM  -->
+		<script type="text/javascript" src="../../lib/js/Observer_Lib/AdvertiseManager.js"> </script>
+		<script type="text/javascript" src="../../lib/js/Observer_Lib/StateManager.js"> </script>
+		<script type="text/javascript" src="../../lib/js/Observer_Lib/ListeningManager.js"> </script>
+		
+		<!-- the implementation code to handle all the UI Events of the MC  -->
+		<script type="text/javascript" src="./MC_Complex.js"></script>
+		
+	</head>
+	
+	<body onload="init();">
+		<h1>Text received:</h1>
+		<div id="wrap">
+			<div id="clock">				
+				<ul>
+					<li id="txt"> Text goes here! </li> 
+				</ul>
+			</div>
+		</div>
+		<br/>
+
+		<br>
+		<h3 id="log">
+			Log will be displayed here.
+		</h3>
+	</body>
+</html>

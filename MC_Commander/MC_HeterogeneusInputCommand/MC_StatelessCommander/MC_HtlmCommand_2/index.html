@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html> 
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Stateless Commander</title>
+		<link href="command.css" rel="stylesheet" type="text/css">
+		<!-- ====================================================================-->
+		<!-- ============================ IMPORT CONFIG FILES ===================-->
+		<!-- the General and Specific Configuration files -->
+		<script type="text/javascript" src="../../../../lib/js/config.js"></script>
+		<script type="text/javascript" src="./MC_config.js"></script>
+
+		<!-- =========================================================================-->
+		<!-- ========================= IMPORT LIBRAIRIES FILES  =======================-->
+
+		<!-- the XHR Lib to handle the client/server async communication -->
+		<script type="text/javascript" src="../../../../lib/js/XHR_Lib/MMDispatcher.js"></script>
+
+		<!-- the Lib to handle the HTTP polling communication with comet -->
+		<!-- <script type="text/javascript" src="../../../../lib/js/Prototype_Lib.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Comet_Lib.js"></script> -->
+		
+		<!-- Test comet -->
+		<script type="text/javascript" src="prototype.js"></script>
+		<script type="text/javascript" src="comet.js"></script>
+
+		<!-- the MMI Lib to send MMI Command Events -->
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/Exception.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/Factory.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/MessageBase.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/MessageRequest.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/MessageResponse.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/MessageType.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/Metadata.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/Notification.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/Spec.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/MMI_Lib/Status.js"></script>
+
+
+		<script type="text/javascript" src="../../../../lib/js/Architecture/AdvertiseManager.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/CCFactory.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/Controller.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/DCFactory.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/InteractionManager.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/InteractionState.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/MCFactory.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/Parser.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/StateManager.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/Timer.js"></script>
+		<script type="text/javascript" src="../../../../lib/js/Architecture/Validator.js"></script>
+		
+		<!-- the implementation code to handle all the UI Events of the MC  -->
+		<script type="text/javascript" src="./MC_UIEventObserver.js"></script>
+
+
+	</head>
+
+	<body onload="init()">
+		<div id="wrap">
+			<div id="simpleCommander">
+				<ul>
+					<li id="txt">
+						Simple commander
+					</li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<form name="form">
+			<input type="button" id="start" name="start" value="start" style="width:100px" onclick="startIsClicked()" />
+			<br><br>
+			<input type="button" id="pause" name="pause" value="pause" style="width:100px" onclick="pauseIsClicked()" />
+			<br><br>
+			<input type="button" id="resume" name="resume" value="resume" style="width:100px" onclick="resumeIsClicked()" />
+			<br><br>
+			<input type="button" id="cancel" name="cancel" value="cancel" style="width:100px" onclick="cancelIsClicked()" />
+			<br>
+		</form>
+		<br>
+		<h4 id="log"> </h4>
+
+	</body>
+</html>
+

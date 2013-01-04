@@ -1,0 +1,50 @@
+InitialObjectDescriptor {
+ objectDescriptorID 1
+ audioProfileLevelIndication 255
+ visualProfileLevelIndication 254
+ sceneProfileLevelIndication 1
+ graphicsProfileLevelIndication 1
+ ODProfileLevelIndication 1
+ esDescr [
+  ES_Descriptor {
+   ES_ID 1
+   decConfigDescr DecoderConfigDescriptor {
+    streamType 3
+    decSpecificInfo BIFSConfig {
+     isCommandStream true
+     pixelMetric true
+     pixelWidth 800
+     pixelHeight 600
+    }
+   }
+  }
+  ES_Descriptor {
+   ES_ID 2
+   decConfigDescr DecoderConfigDescriptor {
+    streamType 1
+   }
+  }
+ ]
+}
+
+OrderedGroup {
+ children [
+  Background2D {
+   backColor 0.92 0.92 0.92
+  }
+  WorldInfo {
+   info ["This shows usage of the inline node"]
+   title "Inline Test"
+  }
+  Transform2D {
+   scale 0.95 0.95 
+   children [
+    Inline {
+     url ["table.svg"]
+    }
+   ]
+  }
+ ]
+}
+
+

@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title> Test </title>
+		<script type="text/javascript" src="../Architecture/AdvertiseManager.js"></script>
+		<script type="text/javascript" src="../Architecture/CCFactory.js"></script>
+		<script type="text/javascript" src="../Architecture/Controller.js"></script>
+		<script type="text/javascript" src="../Architecture/DCFactory.js"></script>
+		<script type="text/javascript" src="../Architecture/InteractionManager.js"></script>
+		<script type="text/javascript" src="../Architecture/InteractionState.js"></script>
+		<script type="text/javascript" src="../Architecture/MCFactory.js"></script>
+		<script type="text/javascript" src="../Architecture/StateManager.js"></script>
+		<script type="text/javascript" src="../Architecture/Timer.js"></script>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="http://code.jquery.com/qunit/git/qunit.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				/*============================================================*/
+				/*==================== Dc Factory Test========================*/
+				/*============================================================*/
+				module("Dc Factory Test");
+
+				// Normal case
+				test("normal case", function() {
+					var value;
+					var dcFactory = Object.create(DCFactory);
+					var dc = dcFactory.createHtmlDC();
+					dc.createCookie("toto", "tata", 1);
+					var value = dc.readCookie("toto");
+
+					equal(value, "tata", "We expect value to be 'tata'");
+				});
+
+				// Boundary case
+				test("boundary case", function() {
+					expect(1)
+					var value;
+					var dcFactory = Object.create(DCFactory);
+					var dc = dcFactory.createHtmlDC();
+					dc.createCookie("toto", "tata", 0);
+					var value = dc.readCookie("toto");
+
+					equal(value, "tata", "We expect value to be 'tata'");
+
+				});
+
+				// unexpected case
+				test("unexpected case", function() {
+					var value;
+					var dcFactory = Object.create(DCFactory);
+					var dc = dcFactory.createHtmlDC();
+					dc.createCookie("toto", "tata", -1);
+					var value = dc.readCookie("toto");
+
+					equal(value, null, "We expect value to be 'null'");
+				});
+
+				// Delete cookie
+				test("Delete cookie", function() {
+					var value;
+					var dcFactory = Object.create(DCFactory);
+					var dc = dcFactory.createHtmlDC();
+					dc.createCookie("toto", "tata", 1);
+					dc.eraseCookie("toto");
+					var value = dc.readCookie("toto");
+
+					equal(value, null, "We expect value to be null");
+				});
+
+				/*============================================================*/
+				/*========================= Test Load ========================*/
+				/*============================================================*/
+				module("StateManager.load");
+
+				// Delete cookie
+				test("Don't have session local", function() {
+					expect(2);
+
+					var ccFactory;
+					var dc;
+					var dcFactory;
+					var stateManager;
+					var currentState;
+
+					ccFactory = Object.create(CCFactory);
+					dcFactory = Object.create(DCFactory);
+					stateManager = ccFactory.createStateManager();
+
+					// Don't have (logically)
+					dc = dcFactory.createHtmlDC();
+					dc.createCookie("hasData", false);
+					currentState = stateManager.load();
+					equal(currentState, InteractionState.DEAD, "We expect value to be DEAD");
+
+					// Don't have (physically)
+					dc.eraseCookie("hasData");
+					currentState = stateManager.load();
+					equal(currentState, InteractionState.DEAD, "We expect value to be DEAD");
+				});
+
+				// now > end
+				test("now >= end", function() {
+
+					var ccFactory;
+					var dc;
+					var dcFactory;
+					var now;
+					var stateManager;
+					var currentState;
+
+					ccFactory = Object.create(CCFactory);
+					dcFactory = Object.create(DCFactory);
+					stateManager = ccFactory.createStateManager();
+
+					now = (new Date()).getTime();
+
+					dc = dcFactory.createHtmlDC();
+					dc.createCookie("hasData", true);
+					dc.createCookie("end", now - 1);
+
+					currentState = stateManager.load();
+					equal(currentState, InteractionState.DEAD, "We expect value to be DEAD");
+				});
+
+				// now < end, sleep <= 0
+				test("now < end, sleep <= 0 ", function() {
+					expect(1);
+
+					var ccFactory;
+					var dc;
+					var dcFactory;
+					var now;
+					var stateManager;
+					var currentState;
+
+					ccFactory = Object.create(CCFactory);
+					dcFactory = Object.create(DCFactory);
+					stateManager = ccFactory.createStateManager();
+
+					now = (new Date()).getTime();
+
+					dc = dcFactory.createHtmlDC();
+					dc.createCookie("hasData", true);
+					dc.createCookie("end", now + 10000);
+					dc.createCookie("begin", now - 10000);
+					currentState = stateManager.load();
+					equal(currentState, InteractionState.ALIVE, "We expect value to be ALIVE");
+				});
+
+				// now < end, sleep > 0
+				test("now < end, sleep > 0 ", function() {
+					expect(1);
+
+					var ccFactory;
+					var dc;
+					var dcFactory;
+					var now;
+					var stateManager;
+					var currentState;
+
+					ccFactory = Object.create(CCFactory);
+					dcFactory = Object.create(DCFactory);
+					stateManager = ccFactory.createStateManager();
+
+					now = (new Date()).getTime();
+
+					// Don't have (logically)
+					dc = dcFactory.createHtmlDC();
+					dc.createCookie("hasData", true);
+					dc.createCookie("end", now + 10000);
+					dc.createCookie("begin", now + 5000);
+					currentState = stateManager.load();
+					equal(currentState, InteractionState.SLEEP, "We expect value to be SLEEP");
+				});
+
+				/*============================================================*/
+				/*========================= Test Register ====================*/
+				/*============================================================*/
+				module("Register");
+
+
+			});
+		</script>
+
+	</head>
+	<body>
+		<h1 id="qunit-header">QUnit example</h1>
+		<h2 id="qunit-banner"></h2>
+		<div id="qunit-testrunner-toolbar"></div>
+		<h2 id="qunit-userAgent"></h2>
+		<ol id="qunit-tests"></ol>
+		<div id="qunit-fixture">
+			test markup, will be hidden
+		</div>
+	</body>
+</html>

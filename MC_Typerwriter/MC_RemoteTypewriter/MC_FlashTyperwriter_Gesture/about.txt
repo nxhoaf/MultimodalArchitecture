@@ -1,0 +1,36 @@
+/**
+*
+*
+*	MouseGesture Sample
+*	
+*	@notice		Mouse Gesture Recognizer
+*	@author		Didier Brun
+*	@version	1.0
+* 	@date		2007-05-17
+* 	@link		http://www.bytearray.org/?p=91
+* 
+* 
+*	Original author :
+*	-----------------
+*	Didier Brun aka Foxy
+*	webmaster@foxaweb.com
+*	http://www.foxaweb.com
+*
+* 	AUTHOR ******************************************************************************
+* 
+*	authorName : 	Didier Brun - www.foxaweb.com
+* 	contribution : 	the original class
+* 	date :			2007-01-18
+* 
+* 	VISIT www.byteArray.org
+* 
+*
+*	LICENSE ******************************************************************************
+* 
+* 	This class is under RECIPROCAL PUBLIC LICENSE.
+* 	http://www.opensource.org/licenses/rpl.php
+* 
+* 	Please, keep this header and the list of all authors
+* 
+*
+*/

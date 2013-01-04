@@ -1,0 +1,27 @@
+debug = true
+sharedObjName = MC_FlexRecognizer
+operationRegister = MC_register
+operationOrchestrate = MC_orchestrate
+defaultToken = kororiko
+defaultContext = Unknown
+defaultImmediate = true
+
+
+#serverRoot = http://www.berthele.com/soa2m/classes/tests/airTest.php
+serverRoot = http://www.berthele.com/soa2m/
+#serverRoot = http://localhost:8888/soa2m/
+
+
+server = http://www.berthele.com/soa2m/services/servicesCC/
+#server = http://localhost:8888/soa2m/services/servicesCC/
+
+contentType = text/xml;charset=ISO-88591
+
+serviceRegister = http://www.berthele.com/soa2m/services/servicesCC/CCs_Register.php
+#serviceRegister = http://localhost:8888/soa2m/services/servicesCC/CCs_Register.php
+
+serviceController = http://www.berthele.com/soa2m/services/servicesCC/CCs_Orchestrator.php
+#serviceController = http://localhost:8888/soa2m/services/servicesCC/CCs_Orchestrator.php
+
+namespaces:Array = configNamespaces()
+messageType:Object = configMessageType()

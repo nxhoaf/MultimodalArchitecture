@@ -1,0 +1,469 @@
+<svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="1020"
+height="630" viewBox="0 0 1020 630"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+onload="startup()">
+
+	<script>
+		<![CDATA[
+		svgNS = "http://www.w3.org/2000/svg";
+		
+		data = [
+		{
+			name : "service1",
+			info : "This is info of service 1, it has a description very long. This description tell you how it work and some of its information"
+		},
+		{
+			name : "This is a very long service name which will span two line in svg file",
+			info : "This is info of service 2"
+		},
+		{
+			name : "service3",
+			info : "This is info of service 3"
+		},
+		{
+			name : "service5",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service6",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service7",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service8",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service9",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service10",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service3",
+			info : "This is info of service 3"
+		},
+		{
+			name : "service5",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service6",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service7",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service8",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service9",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service10",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service3",
+			info : "This is info of service 3"
+		},
+		{
+			name : "service5",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service6",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service7",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service8",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service9",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service10",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service3",
+			info : "This is info of service 3"
+		},
+		{
+			name : "service5",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service6",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service7",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service8",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service9",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service10",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service3",
+			info : "This is info of service 3"
+		},
+		{
+			name : "service5",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service6",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service7",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service8",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service9",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service10",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service3",
+			info : "This is info of service 3"
+		},
+		{
+			name : "service5",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service6",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service7",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service8",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service9",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service10",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service3",
+			info : "This is info of service 3"
+		},
+		{
+			name : "service5",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service6",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service7",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service8",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service9",
+			info : "This is info of service 4"
+		},
+		{
+			name : "service10",
+			info : "This is info of service 4"
+		}
+		
+		];
+		
+		getPixelLen = function (inputStr) {
+			var width;
+            var svgNS = "http://www.w3.org/2000/svg";
+            var txtNode = document.createTextNode(inputStr);
+            text = document.createElementNS(svgNS,"text");
+            text.appendChild(txtNode);                                              
+                    
+            document.getElementById("svg").appendChild(text);
+            width = text.getComputedTextLength();
+            document.getElementById("svg").removeChild(text); 
+            return width;
+		}
+		
+		getLines = function (inputStr, maxLen) {
+			var words = inputStr.split(" ");
+			var result = [];
+			var i;
+			var j = 0;
+			var currentLen = 0, len, spaceLen;
+			var txtNode;
+			var text = document.createElementNS(svgNS,"text");
+			
+			
+			for (i = 0; i < words.length; i++)
+			{
+				// Get len of current word
+				len = getPixelLen(words[i]);
+				
+				if (currentLen + len + 10 >= maxLen) { // the length of " " char is about 10
+					currentLen = 0;
+					j++;
+				}
+				if (result[j] == null) {
+					result[j] = words[i];
+					currentLen += len;
+				} else {
+					result[j] =  result[j] + " " + words[i]; 
+					currentLen += len + 10; // the length of " " char is about 10
+				}
+					
+				
+			}
+			return result;
+			
+		};
+// ******************************************************************************************
+// *************************   Begin Here   *************************************************
+// ******************************************************************************************		
+		startup = function () {
+			var xPadding, yPadding, currentY;
+			var i,j, numLine;
+			var isColorWhite = true;
+			// Group
+			var mainGroup, statusGroup, separator;
+			
+			var rectangle, hName, hInfo;
+			var text, txtNode,txtHeight, tspan, lines, info;
+			
+			var mainBody, statusBody;
+			
+			
+// ************************* Create Group ***************************
+			mainGroup = document.createElementNS(svgNS,"g");
+			mainGroup.setAttributeNS(null,"id", "mainGroup");
+			
+			statusGroup = document.createElementNS(svgNS,"g");
+			mainGroup.setAttributeNS(null,"id", "StatusGroup");
+			
+// ************************* Create Background and add it to group ***************************
+			rectangle = document.createElementNS(svgNS,"rect");
+			rectangle.setAttributeNS(null,"id","mainBackground");
+			rectangle.setAttributeNS(null,"x",10);
+			rectangle.setAttributeNS(null,"y",10);
+			rectangle.setAttributeNS(null,"width",1000);
+			rectangle.setAttributeNS(null,"height",500);
+			rectangle.setAttributeNS(null,"style","fill:white;stroke:black");
+			mainGroup.appendChild(rectangle);
+			
+			rectangle = document.createElementNS(svgNS,"rect");
+			rectangle.setAttributeNS(null,"id","statusBackground");
+			rectangle.setAttributeNS(null,"x",10);
+			rectangle.setAttributeNS(null,"y",520);
+			rectangle.setAttributeNS(null,"width",1000);
+			rectangle.setAttributeNS(null,"height",100);
+			rectangle.setAttributeNS(null,"style","fill:white;stroke:black");
+			statusGroup.appendChild(rectangle);
+			
+// ************************* Create Header and add it to group ***************************
+			// 1. main panel
+			// 1.1 main Header
+			rectangle = document.createElementNS(svgNS,"rect");
+			rectangle.setAttributeNS(null,"x",20);
+			rectangle.setAttributeNS(null,"y",20);
+			rectangle.setAttributeNS(null,"width",980);
+			rectangle.setAttributeNS(null,"height",40);
+			rectangle.setAttributeNS(null,"fill","#b03396");
+			mainGroup.appendChild(rectangle);
+			// 1.2 main label 1
+			xPadding = 30;
+			yPadding = 10;
+			txtHeight = 20
+			text = document.createElementNS(svgNS,"text");
+			text.setAttributeNS(null,"x",20 + xPadding);
+			text.setAttributeNS(null,"y",20 + yPadding + txtHeight);
+			text.setAttributeNS(null,"font-size",txtHeight);
+			text.setAttributeNS(null,"style","fill:black");
+			txtNode = document.createTextNode("SERVICE NAME");
+			text.appendChild(txtNode);
+			mainGroup.appendChild(text);
+			// 1.3 main label 2
+			text = document.createElementNS(svgNS,"text");
+			text.setAttributeNS(null,"x",310 + xPadding);
+			text.setAttributeNS(null,"y",20 + yPadding + txtHeight);
+			text.setAttributeNS(null,"font-size",txtHeight);
+			text.setAttributeNS(null,"style","fill:black");
+			txtNode = document.createTextNode("CURRENT AVAILABLE SERVICE DATA");
+			text.appendChild(txtNode);
+			mainGroup.appendChild(text);
+			
+			// 2. status panel
+			// 2.1 status header
+			rectangle = document.createElementNS(svgNS,"rect");
+			rectangle.setAttributeNS(null,"id","statusHeader");
+			rectangle.setAttributeNS(null,"x",20);
+			rectangle.setAttributeNS(null,"y",530);
+			rectangle.setAttributeNS(null,"width",980);
+			rectangle.setAttributeNS(null,"height",40);
+			rectangle.setAttributeNS(null,"fill","#b03396");
+			statusGroup.appendChild(rectangle);
+			// 2.2 status label
+			
+			xPadding = 30;
+			yPadding = 10;
+			txtHeight = 20
+			text = document.createElementNS(svgNS,"text");
+			text.setAttributeNS(null,"id","statusLabel");
+			text.setAttributeNS(null,"x",20 + xPadding);
+			text.setAttributeNS(null,"y",530 + yPadding + txtHeight);
+			text.setAttributeNS(null,"font-size",txtHeight);
+			text.setAttributeNS(null,"style","fill:black");
+			txtNode = document.createTextNode("CURRENT ROOM SERVER STATE");
+			text.appendChild(txtNode);
+			statusGroup.appendChild(text);
+			
+// ************************* Create Content ***************************
+			currentY = 60;
+			xPadding = 30;
+			yPadding = 6;
+			txtHeight = 14;
+			
+			for (i = 0; i < data.length; i++) {
+				// create name text
+				hName = 0;
+				text = document.createElementNS(svgNS,"text");
+				
+				// index
+				tspan = document.createElementNS(svgNS,"tspan");
+					tspan.setAttributeNS(null,"x",22);
+					tspan.setAttributeNS(null,"y",currentY + yPadding + txtHeight);
+					tspan.setAttributeNS(null,"font-size",txtHeight);
+					tspan.setAttributeNS(null,"style","fill:black");
+					txtNode = document.createTextNode(i + 1 + ". ");
+					tspan.appendChild(txtNode);
+					text.appendChild(tspan);
+					
+				lines = getLines(data[i].name,320);
+				for (j = 0; j < lines.length; j ++) {
+					tspan = document.createElementNS(svgNS,"tspan");
+					tspan.setAttributeNS(null,"x",20 + xPadding);
+					tspan.setAttributeNS(null,"y",currentY + hName + yPadding + txtHeight);
+					tspan.setAttributeNS(null,"font-size",txtHeight);
+					tspan.setAttributeNS(null,"style","fill:black");
+					txtNode = document.createTextNode(lines[j]);
+					tspan.appendChild(txtNode);
+					text.appendChild(tspan);
+					
+					//Update
+					hName +=  yPadding + txtHeight;
+				}
+				mainGroup.appendChild(text);
+				
+				// create info text
+				hInfo = 0;
+				info = document.createElementNS(svgNS,"text");
+				lines = getLines(data[i].info,750);
+				for (j = 0; j < lines.length; j ++) {
+					tspan = document.createElementNS(svgNS,"tspan");
+					tspan.setAttributeNS(null,"x",310 + xPadding);
+					tspan.setAttributeNS(null,"y",currentY + hInfo + yPadding + txtHeight);
+					tspan.setAttributeNS(null,"font-size",txtHeight);
+					tspan.setAttributeNS(null,"style","fill:black");
+					txtNode = document.createTextNode(lines[j]);
+					tspan.appendChild(txtNode);
+					text.appendChild(tspan);
+					
+					//Update
+					hInfo +=  yPadding + txtHeight;
+				}
+				
+				
+				// lower padding
+				if (hName < hInfo) 
+					hName = hInfo;
+				hName += yPadding;
+				// Create wrapper
+				rectangle = document.createElementNS(svgNS,"rect");
+				rectangle.setAttributeNS(null,"x",20);
+				rectangle.setAttributeNS(null,"y",currentY);
+				rectangle.setAttributeNS(null,"width",980);
+				rectangle.setAttributeNS(null,"height",hName);
+				if (isColorWhite) {
+					rectangle.setAttributeNS(null,"fill","white");
+					isColorWhite = false;
+				} else {
+					rectangle.setAttributeNS(null,"fill","silver");
+					isColorWhite = true;
+				}
+				
+				
+				mainGroup.appendChild(rectangle);
+				mainGroup.appendChild(text);
+				mainGroup.appendChild(info);
+				currentY = currentY + hName;				
+			}
+			// 1.4 separator between two label
+			separator = document.createElementNS(svgNS,"rect");
+			separator.setAttributeNS(null,"id","separator");
+			separator.setAttributeNS(null,"x",310);
+			separator.setAttributeNS(null,"y",20);
+			separator.setAttributeNS(null,"width",5);
+			separator.setAttributeNS(null,"height",480);
+			separator.setAttributeNS(null,"fill","white");
+			mainGroup.appendChild(separator);
+// ************************* Add to svg tag ***************************
+			document.getElementById("svg").appendChild(mainGroup);
+			document.getElementById("svg").appendChild(statusGroup);
+// ************************* Update cocument before display it ***************************
+			xPadding = 20;
+			yPadding = 10;
+			txtHeight = 20
+			document.getElementById("mainBackground").setAttributeNS(null,"height", currentY);
+			document.getElementById("separator").setAttributeNS(null,"height", currentY - 20);
+			document.getElementById("statusBackground").setAttributeNS(null,"y", currentY + 20);
+			document.getElementById("statusHeader").setAttributeNS(null,"y", currentY + 30);
+			document.getElementById("statusLabel").setAttributeNS(null,"y", currentY + 30 + yPadding + txtHeight);
+			document.getElementById("svg").setAttribute("height", currentY + 150);	
+			document.getElementById("svg").setAttribute("viewBox", "0 0 1020 " + (currentY + 150));		
+		};
+		//]]>
+	</script>
+	
+</svg>

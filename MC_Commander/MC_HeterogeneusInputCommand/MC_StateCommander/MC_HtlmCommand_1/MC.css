@@ -1,0 +1,9 @@
+body,html {
+/*background: #eee url(/resources/images/bg.gif);*/
+background-repeat: repeat-x;
+}
+body {
+padding: 0 15px 15px;
+margin-top: 15px;
+color: #222;
+}

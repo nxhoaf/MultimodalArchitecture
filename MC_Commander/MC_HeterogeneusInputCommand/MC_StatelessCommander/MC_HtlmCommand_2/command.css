@@ -1,0 +1,65 @@
+<!-- /*Style Sheet*/
+body,html {
+/*background: #eee url(/resources/images/bg.gif);*/
+background-repeat: repeat-x;
+}
+body {
+padding: 0 15px 15px;
+margin-top: 15px;
+color: #222;
+}
+
+#wrap {
+position: relative;
+text-align: center;
+}
+
+
+
+#digital-wrap {
+border: 1px solid #fff;
+width: 7em;
+text-align: center;
+}
+
+#digital-wrap ul {
+margin: 0;
+padding: 0.1em;
+background: #003366;
+color: #FFF;
+list-style-type: none;
+text-align: center;
+}
+
+#digital-wrap li {
+display: inline;
+padding: 0;
+margin: 0;
+}
+
+
+
+
+#wrap {                        /* Style apply to element with id="wrap" */
+font: bold 24pt sans;         /* Use a big bold font */
+background: #ddf;             /* On a light bluish-gray background */
+padding: 10px;                /* Surround it with some space */
+border: solid black 2px;      /* And a solid black border */
+border-radius: 10px;          /* Round the corners (where supported) */
+}
+
+#wrap ul {
+margin: 0;
+padding: 0.1em;
+/*background: #003366;*/
+/*color: #FFF;*/
+list-style-type: none;
+text-align: center;
+}
+
+#wrap li {
+display: inline;
+padding: 0;
+margin: 0;
+}
+-->

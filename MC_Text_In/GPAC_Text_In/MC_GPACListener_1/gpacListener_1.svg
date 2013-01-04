@@ -1,0 +1,77 @@
+<svg id="main" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+width="800"
+height="600"
+viewBox="0 0 800 600"
+onload="init()">
+  <defs id="defs">
+    <linearGradient id="buttonColor" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#9B4B91;stop-opacity:0.9" />
+      <stop offset="20%" style="stop-color:#9B4B91;stop-opacity:0.7" />
+      <stop offset="70%" style="stop-color:#9B4B91;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#9B4B91;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  <script type="text/javascript" xlink:href="table.js" xlink:actuate="onLoad" xlink:show="other" xlink:type="simple" />
+  <script type="text/javascript" xlink:href="../../../lib/js/config.js"/>
+	<script type="text/javascript" xlink:href="timer.js" xlink:actuate="onLoad" xlink:show="other" xlink:type="simple" />
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/Exception.js"/>
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/Factory.js"/>
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/MessageBase.js"/>
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/MessageRequest.js"/>
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/MessageResponse.js"/>
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/MessageType.js"/>
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/Metadata.js"/>
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/Notification.js"/>
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/Spec.js"/>
+	<script type="text/javascript" xlink:href="../../../lib/js/MMI_Lib/Status.js"/>
+	
+  	<script type="text/javascript" xlink:href="../../../lib/js/XHR_lib/MMDispatcher.js"/>
+  	
+  	<script type="text/javascript" xlink:href="../../../lib/js/MmiObservator_Lib/CommandController.js"> </script>
+	<script type="text/javascript" xlink:href="../../../lib/js/MmiObservator_Lib/ContextController.js"> </script>
+	<script type="text/javascript" xlink:href="../../../lib/js/MmiObservator_Lib/ObservatorState.js"> </script>
+	<script type="text/javascript" xlink:href="../../../lib/js/MmiObservator_Lib/RegisterController.js"> </script>
+	<script type="text/javascript" xlink:href="../../../lib/js/MmiObservator_Lib/Parser.js"> </script>
+	<script type="text/javascript" xlink:href="../../../lib/js/MmiObservator_Lib/Validator.js"> </script>
+  	
+  	
+  	<script type="text/javascript" xlink:href="config.js"/>
+  	<script type="text/javascript" xlink:href="observator.js"/>
+  	<script type="text/javascript" xlink:href="gpacListener_1.js"/>
+  <g id="mainPanel" fill="#EDEDED" >
+    <rect width="800" height="475" fill="#FFF" />
+    <rect width="790" height="26" x="5" y="10" fill="#A35F9B" />
+    <text x="12" y="28" fill="#FFF" font-size="13" font-family="Arial" font-weight="bold" >
+      SERVICE NAME
+    </text>
+    <text x="230" y="28" fill="#FFF" font-size="13" font-family="Arial" font-weight="bold" >
+      CURRENT AVAILABLE SERVICE DATA
+    </text>
+  </g>
+  <g id="statusPanel" fill="#EDEDED" >
+    <rect width="800" height="75" x="0" y="530" fill="#FFF" />
+    <rect width="790" height="26" x="5" y="537" fill="#A35F9B" />
+    <text x="12" y="555" fill="#FFF" font-size="13" font-family="Arial" font-weight="bold" >
+      CURRENT SERVER STATE
+    </text>
+    <rect width="790" height="0.8" x="5" y="593" fill="#A8A8A8" />
+    <text id="debugText" x="7" y="583" fill="#333" font-size="12" font-family="Arial" >
+      Server state
+    </text>
+  </g>
+  <g id="mainGroup" fill="none" transform="translate(5,35)" >
+  </g>
+  <rect width="200" height="33" x="170" y="490" fill="#EDEDED" style="stroke-width:0.8;stroke:#A8A8A8;" />
+  <text id="backText" fill-opacity="0.2" x="250" y="510" fill="#000" font-size="13" font-family="Arial" font-weight="bold" >
+    BACK
+  </text>
+  <rect id="back" display="none" width="200" height="28" x="170" y="490" fill="url(#buttonColor)" onclick="changePage('back')" onmouseover="changeColor('backLine','#FFF')" onmouseout="changeColor('backLine','#9B4B91')"/>
+  <rect id="backLine" display="none" width="200" height="4" x="170" y="518" fill="#9B4B91" />
+  <rect width="200" height="33" x="390" y="490" fill="#EDEDED" style="stroke-width:0.8;stroke:#A8A8A8;" />
+  <text id="nextText" x="472" y="510" fill="#000" font-size="13" font-family="Arial" font-weight="bold"  >
+    NEXT
+  </text>
+  <rect id="next" width="200" height="28" x="390" y="490" fill="url(#buttonColor)" onclick="changePage('next')" onmouseover="changeColor('nextLine','#FFF')" onmouseout="changeColor('nextLine','#9B4B91')" />
+  <rect id="nextLine" width="200" height="4" x="390" y="518" fill="#9B4B91" />
+  <rect width="2" height="450" x="220" y="9" fill="#FFF" />
+</svg>

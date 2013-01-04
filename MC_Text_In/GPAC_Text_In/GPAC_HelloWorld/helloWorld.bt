@@ -1,0 +1,52 @@
+InitialObjectDescriptor {
+ objectDescriptorID 1
+ audioProfileLevelIndication 254
+ visualProfileLevelIndication 254
+ sceneProfileLevelIndication 254
+ graphicsProfileLevelIndication 254
+ ODProfileLevelIndication 254
+ esDescr [
+  ES_Descriptor {
+   ES_ID 1
+   decConfigDescr DecoderConfigDescriptor {
+    streamType 3
+    decSpecificInfo BIFSConfig {
+     isCommandStream true
+     pixelMetric true
+     pixelWidth 400
+     pixelHeight 400
+    }
+   }
+  }
+ ]
+}
+
+OrderedGroup {
+ children [
+  Background2D {
+   backColor 1 1 1
+  }
+  Shape {
+   appearance Appearance {
+    material Material2D {
+     emissiveColor 0 0 0
+     filled TRUE
+     lineProps LineProperties {
+      width 2
+     }
+    }
+   }
+   geometry DEF helloWorld Text {
+        string ["Hello world"]
+        fontStyle FontStyle {
+        family ["Verdana"]
+        justify ["MIDDLE"]
+        size 40
+        style "BOLD"
+        }
+      }
+  }
+ ]
+}
+
+

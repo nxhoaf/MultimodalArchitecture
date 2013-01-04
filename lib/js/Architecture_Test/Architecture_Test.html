@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="../Architecture/AdvertiseManager.js"></script>
+		
+		<script type="text/javascript" src="../Architecture/InteractionManager.js"></script>
+		<script type="text/javascript" src="../Architecture/StateManager.js"></script>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="http://code.jquery.com/qunit/git/qunit.js"></script>
+
+		<script>
+			$(document).ready(function() {
+
+				module("Create Control Component");
+
+				// Create AM
+				test("create AM", function() {
+					var ccFactory = Object.create(CCFactory)
+					var am = ccFactory.createAdvertiseManager();
+
+					ok( am instanceof AdvertiseManager, "am instanceof InteractionManager");
+				});
+
+				// Create IM
+				test("create IM", function() {
+					var ccFactory = Object.create(CCFactory)
+					var im = ccFactory.createInteractionManager();
+
+					ok( im instanceof InteractionManager, "im instanceof InteractionManager");
+				});
+
+				// Create SM
+				test("create SM", function() {
+					var ccFactory = Object.create(CCFactory)
+					var sm = ccFactory.createStateManager();
+
+					ok( sm instanceof StateManager, "sm instanceof InteractionManager");
+				});
+
+			});
+		</script>
+
+	</head>
+	<body>
+		<h1 id="qunit-header">QUnit example</h1>
+		<h2 id="qunit-banner"></h2>
+		<div id="qunit-testrunner-toolbar"></div>
+		<h2 id="qunit-userAgent"></h2>
+		<ol id="qunit-tests"></ol>
+		<div id="qunit-fixture">
+			test markup, will be hidden
+		</div>
+	</body>
+</html>

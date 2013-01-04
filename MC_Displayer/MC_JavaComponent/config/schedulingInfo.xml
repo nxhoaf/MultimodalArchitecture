@@ -1,0 +1,50 @@
+<?xml version="1.0"?> 
+<schedulingInfo>
+
+	<dailyData date="12/08/12">
+		
+		<dailyEvent>
+			<startHour>15</startHour>
+			<endHour>19</endHour>
+			<room>DB206</room>
+			<description>Presentation</description>
+		</dailyEvent>
+		<dailyEvent>
+			<startHour>7</startHour>
+			<endHour>9</endHour>
+			<room>DB401</room>
+			<description>Meeting</description>
+		</dailyEvent>
+	</dailyData>
+	
+	<dailyData date="13/08/12">
+		<dailyEvent>
+			<startHour>9</startHour>
+			<endHour>11</endHour>
+			<room>DB101</room>
+			<description>Soutenance de thèse</description>
+		</dailyEvent>
+	</dailyData>
+	
+	<dailyData date="14/08/12">
+		<dailyEvent>
+			<startHour>7</startHour>
+			<endHour>9</endHour>
+			<room>DB401</room>
+			<description>Printing</description>
+		</dailyEvent>
+		<dailyEvent>
+			<startHour>13</startHour>
+			<endHour>15</endHour>
+			<room>DB206</room>
+			<description>Entretien téléphonique</description>
+		</dailyEvent>
+		<dailyEvent>
+			<startHour>19</startHour>
+			<endHour>23</endHour>
+			<room>DB401</room>
+			<description>Buffet</description>
+		</dailyEvent>
+	</dailyData>
+	
+</schedulingInfo>

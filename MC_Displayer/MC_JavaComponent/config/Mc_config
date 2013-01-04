@@ -1,0 +1,13 @@
+#Last modified: 
+#Thu Jul 12 15:27:51 CEST 2012
+mc_metadata={"type"\:"ontology","url"\:"http\://google.com"}
+debug=false
+interactionDebug=true
+mc_confidential=false
+componentName=MC_listener
+mc_data=toto\:myData
+advertiseDebug=false
+sleepDebug=0
+intervalDebug=3000 
+requestNo=2
+lifeTimeDebug=120000 

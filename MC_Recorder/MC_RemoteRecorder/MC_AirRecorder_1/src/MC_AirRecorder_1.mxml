@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   width="639" height="221"
+					   creationComplete="init();">
+	<fx:Style source="MC_AirRecorder_1.css"/>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[	
+			include "MC_UIEventObserver.as";
+			
+		]]>
+	</fx:Script>
+	
+	<s:Group x="96" y="22" width="405" height="127">
+		<s:Label id="label" x="10" y="35" width="385" height="55" fontSize="24" 
+				 text="Click Record to begin."/>
+		
+	</s:Group>
+	<s:Button name="send" id="send" x="418" y="174" label="Send" click="sendIsClicked()"/>
+	<s:TextInput name="txtIn" id="txtIn" x="80" y="174" width="310"/>
+</s:WindowedApplication>

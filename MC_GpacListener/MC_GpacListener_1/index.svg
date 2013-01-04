@@ -1,0 +1,112 @@
+<svg id="main" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+width="800"
+height="600"
+viewBox="0 0 800 600"
+onload="init()">
+  <defs id="defs">
+    <linearGradient id="buttonColor" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#9B4B91;stop-opacity:0.9" />
+      <stop offset="20%" style="stop-color:#9B4B91;stop-opacity:0.7" />
+      <stop offset="70%" style="stop-color:#9B4B91;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#9B4B91;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  
+  
+	<!-- ====================================================================-->
+	<!-- ============================ IMPORT CONFIG FILES ===================--> 
+	<!-- the General and Specific Configuration files -->
+	<script type="text/javascript" xlink:href="./MC_config.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/config.js"></script>
+	
+  
+  	<!-- =========================================================================-->
+	<!-- ========================= IMPORT LIBRAIRIES FILES  =======================-->
+  
+  	<!-- the XHR Lib to handle the client/server async communication -->
+	<script type="text/javascript" xlink:href="../../lib/js/XHR_Lib/MMDispatcher.js"></script> 
+	
+	
+	<!-- Imports the Lib  to handle the Orchestration (turn-taking) Events from the IM  -->
+	<script type="text/javascript" xlink:href="../../lib/js/Controller_Lib.js"></script>
+  
+	<!-- the MMI Lib to send MMI Command Events -->
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/Exception.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/Factory.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/MessageBase.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/MessageRequest.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/MessageResponse.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/MessageType.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/Metadata.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/Notification.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/Spec.js"></script>
+	<script type="text/javascript" xlink:href="../../lib/js/MMI_Lib/Status.js"></script>
+  
+	<!-- the MMI Lib to handle received MMI Commands -->
+	<script type="text/javascript" xlink:href="../../lib/js/Observer_Lib/InteractionManager.js"> </script> 
+	<script type="text/javascript" xlink:href="../../lib/js/Observer_Lib/InteractionState.js"> </script> 
+	<!--  Not worked with GPAC <script type="text/javascript" xlink:href="../../lib/js/Observer_Lib/Timer.js"> </script> -->
+	<script type="text/javascript" xlink:href="../../lib/js/Observer_Lib/Parser.js"> </script>
+	<script type="text/javascript" xlink:href="../../lib/js/Observer_Lib/Validator.js"> </script>  
+  
+  	<!-- the MMI Lib to create interface 'class' in js -->		
+	<script type="text/javascript" xlink:href="../../lib/js/Interface_Lib.js"></script>
+	
+	<!-- the MMI Lib to handle button-generated commands -->	
+	<script type="text/javascript" xlink:href="../../lib/js/Commander_Lib.js"></script>
+  
+	<!-- ==============================================================================-->
+	<!-- ========================= IMPORT IMPLEMENTATION FILES  =======================-->
+ 
+		<!-- the implementation code to send Events of the IM  -->
+	<script type="text/javascript" xlink:href="../../lib/js/Observer_Lib/AdvertiseManager.js"> </script>
+	<script type="text/javascript" xlink:href="../../lib/js/Observer_Lib/StateManager.js"> </script>
+	
+	<!-- the implementation code to handle all the UI Events of the MC  -->
+	<script type="text/javascript" xlink:href="MC_UIEventObserver.js"></script>
+  
+  	<!-- <!-- ==============================================================================-->
+	<!-- ========================= APPLICATION FILES  =======================-->
+  	<script type="text/javascript" xlink:href="table.js" xlink:actuate="onLoad" xlink:show="other" xlink:type="simple" />
+  	<script type="text/javascript" xlink:href="timer.js"/>
+	<script type="text/javascript" xlink:href="UPnP.js"/> -->
+
+
+  <g id="mainPanel" fill="#EDEDED" >
+    <rect width="800" height="475" fill="#FFF" />
+    <rect width="790" height="26" x="5" y="10" fill="#A35F9B" />
+    <text x="12" y="28" fill="#FFF" font-size="13" font-family="Arial" font-weight="bold" >
+      SERVICE NAME
+    </text>
+    <text x="230" y="28" fill="#FFF" font-size="13" font-family="Arial" font-weight="bold" >
+      CURRENT AVAILABLE SERVICE DATA
+    </text>
+  </g>
+  <g id="statusPanel" fill="#EDEDED" >
+    <rect width="800" height="75" x="0" y="530" fill="#FFF" />
+    <rect width="790" height="26" x="5" y="537" fill="#A35F9B" />
+    <text x="12" y="555" fill="#FFF" font-size="13" font-family="Arial" font-weight="bold" >
+      CURRENT SERVER STATE
+    </text>
+    <rect width="790" height="0.8" x="5" y="593" fill="#A8A8A8" />
+    <text id="debugText" x="7" y="583" fill="#333" font-size="12" font-family="Arial" >
+      Server state
+    </text>
+  </g>
+  <g id="mainGroup" fill="none" transform="translate(5,35)" >
+  </g>
+  <rect width="200" height="33" x="170" y="490" fill="#EDEDED" style="stroke-width:0.8;stroke:#A8A8A8;" />
+  <text id="backText" fill-opacity="0.2" x="250" y="510" fill="#000" font-size="13" font-family="Arial" font-weight="bold" >
+    BACK
+  </text>
+  <rect id="back" display="none" width="200" height="28" x="170" y="490" fill="url(#buttonColor)" onclick="changePage('back')" onmouseover="changeColor('backLine','#FFF')" onmouseout="changeColor('backLine','#9B4B91')"/>
+  <rect id="backLine" display="none" width="200" height="4" x="170" y="518" fill="#9B4B91" />
+  <rect width="200" height="33" x="390" y="490" fill="#EDEDED" style="stroke-width:0.8;stroke:#A8A8A8;" />
+  <text id="nextText" x="472" y="510" fill="#000" font-size="13" font-family="Arial" font-weight="bold"  >
+    NEXT
+  </text>
+  <rect id="next" width="200" height="28" x="390" y="490" fill="url(#buttonColor)" onclick="changePage('next')" onmouseover="changeColor('nextLine','#FFF')" onmouseout="changeColor('nextLine','#9B4B91')" />
+  <rect id="nextLine" width="200" height="4" x="390" y="518" fill="#9B4B91" />
+  <rect width="2" height="450" x="220" y="9" fill="#FFF" />
+</svg>
